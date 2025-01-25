@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>serialize() 示例</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- 定义一个表单 -->
+    <form id="myForm">
+        <!-- 文本输入框，用于输入用户名 -->
+        <label for="username">用户名:</label>
+        <input type="text" id="username" name="username" value="JohnDoe"><br>
+        <!-- 密码输入框，用于输入密码 -->
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" value="123456"><br>
+        <!-- 单选框，用于选择性别 -->
+        <input type="radio" id="male" name="gender" value="male" checked>
+        <label for="male">男</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">女</label><br>
+        <!-- 复选框，用于选择爱好 -->
+        <input type="checkbox" id="reading" name="hobbies" value="reading" checked>
+        <label for="reading">阅读</label>
+        <input type="checkbox" id="swimming" name="hobbies" value="swimming">
+        <label for="swimming">游泳</label><br>
+        <!-- 下拉选择框，用于选择城市 -->
+        <label for="city">城市:</label>
+        <select id="city" name="city">
+            <option value="beijing">北京</option>
+            <option value="shanghai" selected>上海</option>
+            <option value="guangzhou">广州</option>
+        </select><br>
+        <!-- 提交按钮 -->
+        <input type="submit" value="提交">
+    </form>
+    <!-- 用于显示序列化后的字符串 -->
+    <div id="output"></div>
+
+    <script>
+        $(document).ready(function() {
+            // 监听表单的提交事件
+            $('#myForm').on('submit', function(e) {
+                // 阻止表单的默认提交行为，避免页面刷新
+                e.preventDefault();
+                // 使用 serialize() 方法将表单数据序列化为字符串
+                var formData = $(this).serialize();
+                // 将序列化后的字符串显示在页面上
+                $('#output').text('序列化后的表单数据: ' + formData);
+                // 打印序列化后的字符串到控制台
+                console.log(formData);
+            });
+        });
+    </script>
+</body>
+
+</html>
