@@ -101,8 +101,8 @@ $(function() {
                         return layer.msg(res.message);
                     }
                     layer.msg('登录成功');
-                    localStorage.setItem('token', res.data.token);
-                    // location.href = './index.html';
+                    localStorage.setItem('token', res.token);
+                    location.href = './index.html';
                 }
                 // 处理请求失败的情况
         }).fail(function(res) {
