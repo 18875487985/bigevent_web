@@ -19,9 +19,9 @@ $.ajaxPrefilter(function(options) {
     }
     // 4 全局统一挂载complete函数
      options.complete = function(res){
-        console.log('执行了complete回调函数');
-        console.log(res.responseJSON.code);
-        console.log(res.responseJSON.message);
+        // console.log('执行了complete回调函数');
+        // console.log(res.responseJSON.code);
+        // console.log(res.responseJSON.message);
         
         // 在comlete回调函数中可以使用res.responseJSON获取服务器返回的json数据
         if (res.responseJSON.code === 1 && res.responseJSON.message === '身份认证失败！') {
